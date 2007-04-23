@@ -14,7 +14,7 @@ Release:	%{release}
 Group:		System/Internationalization
 License:	GPL
 URL:		http://sourceforge.jp/projects/scim-imengine/
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:		%{libname} = %{version}
 Requires:		anthy >= %{anthy_version}
