@@ -75,6 +75,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 %{_libdir}/scim-1.0/*/IMEngine/*.so
 %{_libdir}/scim-1.0/*/SetupUI/*.so
-%{_libdir}/scim-1.0/*/*/Helper/*.so
-
-
