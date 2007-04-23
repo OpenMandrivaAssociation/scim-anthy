@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 # remove unneeded files
 rm -f %{buildroot}/%{_libdir}/scim-1.0/*/*/*.{a,la}
-rm -f %{buildroot}/%{_libdir}/scim-1.0/*/*/Helper/*.{a,la}
+rm -f %{buildroot}/%{_libdir}/scim-1.0/*/Helper/*.{a,la}
 
 %find_lang %{name}
 
@@ -68,10 +68,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog README
 %{_datadir}/scim/icons/*
-%{_datadir}/scim/Anthy/style/*.sty
+%dir %{_datadir}/scim/Anthy
+%{_datadir}/scim/Anthy/*
 
 %files -n %{libname}
 %defattr(-,root,root)
 %doc COPYING
 %{_libdir}/scim-1.0/*/IMEngine/*.so
 %{_libdir}/scim-1.0/*/SetupUI/*.so
+%{_libdir}/scim-1.0/*/Helper/*.so
