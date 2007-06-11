@@ -1,5 +1,5 @@
 %define version	1.3.0
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 %define scim_version	1.4.5
 %define anthy_version	6606
@@ -15,6 +15,8 @@ Group:		System/Internationalization
 License:	GPL
 URL:		http://sourceforge.jp/projects/scim-imengine/
 Source0:	%{name}-%{version}.tar.gz
+Patch0:		scim-anthy-modify_romaji_tables.diff
+Patch1:		scim-anthy-disable_custom_candidate_window.diff
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:		%{libname} = %{version}
 Requires:		anthy >= %{anthy_version}
@@ -40,6 +42,8 @@ scim-anthy library.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 cp /usr/share/automake-1.9/mkinstalldirs .
 
 %build
