@@ -1,10 +1,9 @@
 %define version	1.2.4
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 %define scim_version	1.4.5
 %define anthy_version	6606
 
-%define libname_orig lib%{name}
 %define libname %mklibname %{name} 0
 
 Name:		scim-anthy
@@ -19,7 +18,7 @@ Source0:	%{name}-%{version}.tar.gz
 Patch0:		scim-anthy-modify_romaji_tables.diff
 Patch1:		scim-anthy-disable_custom_candidate_window.diff
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-Requires:		%{libname} = %{version}
+Requires:		%{libname} = %{epoch}:%{version}-%{release}
 Requires:		anthy >= %{anthy_version}
 Requires:		scim >= %{scim_version}
 Requires:		kasumi
@@ -35,7 +34,6 @@ It supports Japanese input.
 %package -n %{libname}
 Summary:	Scim-anthy library
 Group:		System/Internationalization
-Provides:		%{libname_orig} = %{version}
 
 %description -n %{libname}
 scim-anthy library.
