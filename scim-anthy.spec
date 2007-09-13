@@ -9,7 +9,7 @@
 
 Name:		scim-anthy
 Summary:	Scim-anthy is an SCIM IMEngine module for anthy
-Epoch:		1
+Epoch:		2
 Version:	%{version}
 Release:	%{release}
 Group:		System/Internationalization
