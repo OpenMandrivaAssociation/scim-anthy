@@ -1,5 +1,5 @@
-%define version	1.3.0
-%define release	%mkrel 2
+%define version	1.2.4
+%define release	%mkrel 1
 
 %define scim_version	1.4.5
 %define anthy_version	6606
@@ -9,6 +9,7 @@
 
 Name:		scim-anthy
 Summary:	Scim-anthy is an SCIM IMEngine module for anthy
+Epoch:		1
 Version:	%{version}
 Release:	%{release}
 Group:		System/Internationalization
@@ -24,7 +25,7 @@ Requires:		scim >= %{scim_version}
 Requires:		kasumi
 BuildRequires:		anthy-devel >= %{anthy_version}
 BuildRequires:		scim-devel >= %{scim_version}
-BuildRequires:		automake1.8 libltdl-devel
+BuildRequires:		automake libltdl-devel
 
 %description
 Scim-anthy is an SCIM IMEngine module for anthy.
@@ -39,15 +40,12 @@ Provides:		%{libname_orig} = %{version}
 %description -n %{libname}
 scim-anthy library.
 
-
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-cp /usr/share/automake-1.9/mkinstalldirs .
 
 %build
-[[ ! -x configure ]] && ./bootstrap
+autoreconf
 %configure2_5x
 %make
 
@@ -56,8 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 # remove unneeded files
-rm -f %{buildroot}/%{_libdir}/scim-1.0/*/*/*.{a,la}
-rm -f %{buildroot}/%{_libdir}/scim-1.0/*/Helper/*.{a,la}
+rm -f %{buildroot}/%scim_plugins_dir/*/*.{a,la}
 
 %find_lang %{name}
 
@@ -78,6 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %{libname}
 %defattr(-,root,root)
 %doc COPYING
-%{_libdir}/scim-1.0/*/IMEngine/*.so
-%{_libdir}/scim-1.0/*/SetupUI/*.so
-%{_libdir}/scim-1.0/*/Helper/*.so
+%scim_plugins_dir/IMEngine/*.so
+%scim_plugins_dir/SetupUI/*.so
+%scim_plugins_dir/Helper/*.so
