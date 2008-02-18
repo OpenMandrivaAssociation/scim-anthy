@@ -1,5 +1,5 @@
 %define version	1.2.4
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 %define scim_version	1.4.5
 %define anthy_version	6606
