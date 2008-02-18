@@ -7,7 +7,7 @@
 %define libname %mklibname %{name} 0
 
 Name:		scim-anthy
-Summary:	Scim-anthy is an SCIM IMEngine module for anthy
+Summary:	SCIM IMEngine module for anthy
 Epoch:		2
 Version:	%{version}
 Release:	%{release}
