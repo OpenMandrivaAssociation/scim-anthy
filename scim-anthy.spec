@@ -1,5 +1,5 @@
-%define version	1.2.6
-%define release	%mkrel 2
+%define version	1.2.7
+%define release	%mkrel 1
 
 %define scim_version	1.4.5
 %define anthy_version	6606
@@ -36,15 +36,6 @@ It supports Japanese input.
 %patch0 -p1
 
 %build
-
-set -x
-autopoint --force
-aclocal -I m4
-autoheader
-libtoolize -c --automake 
-automake --add-missing --copy --include-deps
-autoconf
-
 %configure2_5x
 %make
 
