@@ -13,7 +13,7 @@ Version:	%{version}
 Release:	%{release}
 Group:		System/Internationalization
 License:	GPLv2+
-URL:		http://sourceforge.jp/projects/scim-imengine/
+URL:		https://sourceforge.jp/projects/scim-imengine/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		scim-anthy-modify_romaji_tables.diff
 Patch1:		scim-anthy-disable_custom_candidate_window.diff
