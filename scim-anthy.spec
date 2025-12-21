@@ -22,6 +22,9 @@ Obsoletes:		%{libname}
 Requires:		anthy >= %{anthy_version}
 Requires:		scim-client = %{scim_api}
 Requires:		kasumi
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:		anthy-devel >= %{anthy_version}
 BuildRequires:		scim-devel >= %{scim_version}
 BuildRequires:		automake libltdl-devel
